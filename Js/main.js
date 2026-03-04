@@ -68,9 +68,9 @@ window.addEventListener("load", function() {
     tabla.appendChild(encabezado);
 
     const datosCamaras = [
-        { id: "C001", nombre: "Camara 1", imagen: "/img_camera/1_ALAMEDA IZQUIERDA_main_20251204084441.jpg" },
-        { id: "C002", nombre: "Camara 2", imagen: "/img_camera/1_ALAMEDA PEATONAL_main_20251204083035.jpg" },
-        { id: "C003", nombre: "Camara 3", imagen: "/img_camera/1_CASETA ENTRADA_main_20251203164248.jpg" }
+        { id: "C001", nombre: "Camara 1", imagen: "../img_camera/1_ALAMEDA IZQUIERDA_main_20251204084441.jpg" },
+        { id: "C002", nombre: "Camara 2", imagen: "../img_camera/1_ALAMEDA PEATONAL_main_20251204083035.jpg" },
+        { id: "C003", nombre: "Camara 3", imagen: "../img_camera/1_CASETA ENTRADA_main_20251203164248.jpg" }
     ];
 
     datosCamaras.forEach(cam => {
