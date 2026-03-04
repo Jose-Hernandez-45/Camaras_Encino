@@ -36,8 +36,8 @@ window.addEventListener("load", function() {
         mapa.style.opacity = "0";
         setTimeout(() => {
             mapa.src = mapa.src.includes("encino_map.png")
-                ? "../encino1.png"
-                : "../encino_map.png";
+                ? "mapa-proyecto/encino1.png"
+                : "mapa-proyecto/encino_map.png";
             mapa.style.opacity = "1";
         }, 500);
     });
