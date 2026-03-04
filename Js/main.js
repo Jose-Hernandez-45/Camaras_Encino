@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
     mapaWrapper.className = "mapa-wrapper";
 
     const mapa = document.createElement("img");
-    mapa.src = "../encino_map.png";
+    mapa.src = "mapa-proyecto/encino_map.png";
     mapa.alt = "Mapa Encino";
     mapa.style.maxWidth = "550px";
     mapa.style.maxHeight = "80vh";
