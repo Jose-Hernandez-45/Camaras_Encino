@@ -1,0 +1,19 @@
+Imagen Mapa
+En el archivo encino.ia se encuentra el trazado del mapa separado por las capas: Delimitaciones, edificios, carpas y techo, pasillos y camellones, estacionamiento, fondo y la imagen satelital. Por si en algún futuro se necesita dibujar o cambiar algún trazo.
+
+Generar puntos 
+-Al abrir editor_puntos.html primero hay que cargar la imagen donde se va a mapear los puntos.
+-Una vez cargada la imagen, si es una actualización o modificación de puntos hay que importar dichos puntos los cuales están en Puntos.txt, es copiar lo que hay en el .txt y pegarlos en el recuadro blanco para posteriormente presionar en el botón "Importar Puntos". 
+-Una vez importado los puntos podemos modificarlos arrastrando con click izquierdo su posición o dando click derecho para eliminarlo. No es posible editar el nombre de un punto ya existente, si se desea cambiar el nombre del archivo de un punto es necesario borrarlo y crear uno nuevo con el nombre deseado.
+-Para crear un punto solo es necesario dar click izquierdo donde queramos mapearlo, cuando se de click aparecerá un input para poner el nombre de la imagen a la cual va a hacer referencia el punto. Es necesario incluir la extensión del archivo (.jpg, .png, .jpeg).
+-Para generar el html con los puntos ya mapeados y haciendo referencia a las imagenes, dar click en el botón "Descargar HTML final".
+-Copiar el texto del recuadro negro (Lista de puntos generados) y guardar esa lista, por ejemplo en Puntos.txt.
+-Para que las imagenes se vean reflejado en el HTML final, es necesario que las imagenes se encuentren dentro de la misma carpeta donde guardamos el HTML final con el mismo nombre tanto de archivo como la extension de la imagen que registramos en el punto mapeado.
+
+HTML->EXE
+-Para empaquetar nuestro html y sus imágenes en un .exe yo utilicé el programa "html Executable 2025" donde creamos un nuevo proyecto y se selecciona la carpeta del html a empaquetar que debe de ser la misma donde están las imágenes y se selecciona que "mapa_camaras_niveles.html" va a ser el index del proyecto, se puede cambiar la interfaz del .exe agregando una barra de navegación pero yo lo dejé como "Browser only: no other pre-defined UI item", después pedirá el nombre del .exe y donde se va a generar.
+-Recomiendo dejar todo lo que se va a empaquetar (mapa_camaras_niveles.html, ico, imágenes de las camaras) en una carpeta diferente a donde está alojado nuestro html generador.
+-Como extra se puede cambiar el tema de .exe a Black o algún otro tema de la aplicación o de windows, esto se hace en "Application Settings" y en "Skin Properties".
+-También se puede agregar un icono al .exe, esto se hace en "Application Output" y en "Icon / Version", solo se pone la ruta del archivo .ico llamado "ico.ico". 
+-Para generarlo solo vamos a "File"," Run". Con eso nos aparecerá la ventana del .exe y se habrá generado donde lo indicamos al crear el proyecto.
+-Si al momento de pasar el cursor aparece el error "Unexpected WebView error: Compress Data Error Found. Code: compressed block too large" es porque el exe generado es muy pesado, ya sea por las imágenes de las camaras (Deben de pesar menos de 1.5MB) o por los temas seleccionados.

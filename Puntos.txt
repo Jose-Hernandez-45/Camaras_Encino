@@ -1,0 +1,105 @@
+1. [Nivel 1] 1_EST HS PAPÁS_main_20251204083019.jpg → top:25.71%, left:32.64%
+2. [Nivel 1] 1_Est HS LETRERO_main_20251204083041.jpg → top:33.12%, left:25.04%
+3. [Nivel 1] 1_EST HS BANCAS_main_20251204083039.jpg → top:26.81%, left:34.15%
+4. [Nivel 1] 1_ALAMEDA PEATONAL_main_20251204083035.jpg → top:34.06%, left:24.49%
+5. [Nivel 1] 1_Est HS techos_main_20251204084435.jpg → top:25.98%, left:34.70%
+6. [Nivel 1] 1_EST HS SALIDA_main_20251204084437.jpg → top:31.91%, left:23.60%
+7. [Nivel 1] 1_EST HS PAPÁS_main_20251204084439.jpg → top:27.14%, left:32.58%
+8. [Nivel 1] 1_ALAMEDA IZQUIERDA_main_20251204084441.jpg → top:32.24%, left:21.62%
+9. [Nivel 1] 1_RECEPCION_main_20251203172927.jpg → top:86.84%, left:60.73%
+10. [Nivel 1] 1_PASILLO CONTADOR_main_20251203155047.jpg → top:85.65%, left:60.18%
+11. [Nivel 1] 1_JARDIN SECUNDARIO_main_20251203133901.jpg → top:86.53%, left:64.77%
+12. [Nivel 1] 1_CASETA ENTRADA_main_20251203164248.jpg → top:88.23%, left:65.52%
+13. [Nivel 1] 1_EST PRINCIPAL DER_main_20251203164930.jpg → top:90.26%, left:69.56%
+14. [Nivel 1] 1_EST PRINCIPAL IZQ_main_20251203152626.jpg → top:90.15%, left:70.73%
+15. [Nivel 1] 1_ENTRADA ALAMEDA_main_20251203160051.jpg → top:91.09%, left:30.04%
+16. [Nivel 1] 1_PASILLO JHS_main_20251203151120.jpg → top:82.38%, left:82.30%
+17. [Nivel 1] 2_CC_main_20251203160914.jpg → top:70.21%, left:59.63%
+18. [Nivel 1] 2_VELARIA HS_main_20251203150353.jpg → top:48.04%, left:34.22%
+19. [Nivel 1] 2_BAÑO HS_main_20251203143927.jpg → top:43.64%, left:36.69%
+20. [Nivel 1] 2_CORRALITO_main_20251203160142.jpg → top:90.12%, left:61.00%
+21. [Nivel 1] 2_JARDIN CENTRAL LAB_main_20251203155227.jpg → top:72.22%, left:63.19%
+22. [Nivel 1] 2_LABORATORIO_main_20251203160437.jpg → top:70.08%, left:66.48%
+23. [Nivel 1] 2_ENTRADA LAB_main_20251203155427.jpg → top:69.91%, left:63.06%
+24. [Nivel 1] 2_BAÑO ES_main_20251203150708.jpg → top:81.76%, left:53.33%
+25. [Nivel 1] 2_COMEDOR ES_main_20251203155831.jpg → top:71.40%, left:52.58%
+26. [Nivel 1] 2_BAÑO CAFETERIA_main_20251203160231.jpg → top:70.85%, left:53.53%
+27. [Nivel 1] 3_PASILLO DOC_main_20251203120503.jpg → top:72.88%, left:71.00%
+28. [Nivel 1] 3_PASILLO POLIVALENTE_main_20251203115819.jpg → top:64.59%, left:64.01%
+29. [Nivel 1] 3_CHANGUERA_main_20251203140822.jpg → top:90.02%, left:28.67%
+30. [Nivel 1] 3_TENIS_main_20251203155909.jpg → top:64.35%, left:62.78%
+31. [Nivel 1] 3_CANCHA 3_main_20251203155647.jpg → top:79.11%, left:32.44%
+32. [Nivel 2] 3_TERRAZA_main_20251203160417.jpg → top:68.72%, left:65.25%
+33. [Nivel 1] 3_COPIADORA_main_20251203160233.jpg → top:87.33%, left:57.71%
+34. [Nivel 1] 3_SUBESTACION_main_20251203161004.jpg → top:90.08%, left:46.34%
+35. [Nivel 1] 3_POLIVALENTE 2_main_20251203160141.jpg → top:69.14%, left:63.74%
+36. [Nivel 1] 3_POLIVALENTE 1_main_20251203160155.jpg → top:65.48%, left:63.12%
+37. [Nivel 1] 3_OFICINA JHS_main_20251203160049.jpg → top:84.03%, left:80.86%
+38. [Nivel 1] 3_MESA DE PIEDRA_main_20251203155818.jpg → top:85.84%, left:84.29%
+39. [Nivel 1] 3_SALON 2_main_20251203173038.jpg → top:81.61%, left:74.84%
+40. [Nivel 1] 3_MINI VELARIA JHS_main_20251203131533.jpg → top:83.37%, left:83.19%
+41. [Nivel 2] 3_PASILLO 4to_main_20251203151442.jpg → top:77.04%, left:51.96%
+42. [Nivel 2] 3_PASILLO 5to_main_20251203155457.jpg → top:77.48%, left:51.14%
+43. [Nivel 1] 4_ENTRADA OFICINAS_main_20251203155819.jpg → top:87.18%, left:63.95%
+44. [Nivel 1] 4_ALAMEDA DERECHA_main_20251203160003.jpg → top:34.14%, left:22.71%
+45. [Nivel 1] 4_ESCALERA TERRAZA_main_20251203160001.jpg → top:68.92%, left:66.41%
+46. [Nivel 2] 4_JARDIN CTRAL ALTO_main_20251203160050.jpg → top:83.67%, left:59.77%
+47. [Nivel 2] 4_SALA ENCINO_main_20251203160502.jpg → top:67.43%, left:62.16%
+48. [Nivel 2] 4_PSICOPEDAGOGICO_main_20251203180231.jpg → top:82.81%, left:52.71%
+49. [Nivel 1] 4_OFICINA DEPORTES_main_20251203180139.jpg → top:84.26%, left:52.78%
+50. [Nivel 1] 4_ESCALERAS ES_main_20251203180642.jpg → top:79.76%, left:48.53%
+51. [Nivel 1] 4_ENTRADA CORRALITO_main_20251203160551.jpg → top:85.51%, left:52.78%
+52. [Nivel 1] 4_PASILLO PRIMERO_main_20251203160412.jpg → top:77.23%, left:51.55%
+53. [Nivel 1] 4_CANCHA 2_main_20251203160822.jpg → top:76.61%, left:45.32%
+54. [Nivel 1] 4_CAFETERIA SUR_main_20251203180501.jpg → top:66.23%, left:60.38%
+55. [Nivel 1] 5_PRIMERO A_main_20251203160151.jpg → top:78.32%, left:48.06%
+56. [Nivel 1] 5_PRIMERO B_main_20251203160147.jpg → top:76.12%, left:51.00%
+57. [Nivel 1] 5_SEGUNDO A_main_20251203155912.jpg → top:72.33%, left:53.26%
+58. [Nivel 1] 5_SEGUNDO B_main_20251203163103.jpg → top:70.41%, left:56.00%
+59. [Nivel 1] 5_MUSICA_main_20251203154957.jpg → top:67.50%, left:60.32%
+60. [Nivel 2] 5_TERCERO B_main_20251203155548.jpg → top:68.72%, left:58.40%
+61. [Nivel 2] 5_TERCERO A_main_20251203155909.jpg → top:70.35%, left:55.79%
+62. [Nivel 2] 5_CUARTO B_main_20251203160551.jpg → top:72.11%, left:53.06%
+63. [Nivel 2] 5_CUARTO A_main_20251203163836.jpg → top:73.86%, left:50.93%
+64. [Nivel 2] 5_SALA MAESTROS ES_main_20251203164609.jpg → top:75.34%, left:48.67%
+65. [Nivel 1] 5_SALON 3_main_20251203161603.jpg → top:84.14%, left:77.44%
+66. [Nivel 1] 5_SALON 1_main_20251203155915.jpg → top:78.59%, left:71.55%
+67. [Nivel 1] 5_SALON 4_main_20251203160510.jpg → top:86.11%, left:79.84%
+68. [Nivel 1] 6_9B_main_20251203160501.jpg → top:48.41%, left:44.08%
+69. [Nivel 1] 6_Tiro esquina HS_main_20251203155959.jpg → top:51.06%, left:50.11%
+70. [Nivel 1] 6_BODEGA_main_20251203160139.jpg → top:61.69%, left:36.21%
+71. [Nivel 1] 6_Cafeteria Norte_main_20251203155638.jpg → top:62.15%, left:47.37%
+72. [Nivel 1] 6_Aula Magna_main_20251203155550.jpg → top:40.67%, left:33.88%
+73. [Nivel 1] 6_Velaria_main_20251203160504.jpg → top:62.52%, left:37.10%
+74. [Nivel 1] 6_Maestros HS_main_20251203160412.jpg → top:44.95%, left:32.23%
+75. [Nivel 1] 6_10A_main_20251203155548.jpg → top:50.77%, left:39.01%
+76. [Nivel 1] 6_11A_main_20251203153630.jpg → top:61.86%, left:40.79%
+77. [Nivel 1] 6_Pasillo HS_main_20251203162420.jpg → top:61.20%, left:47.99%
+78. [Nivel 2] 6_SALON-5_main_20251203171211.jpg → top:67.56%, left:95.59%
+79. [Nivel 1] 6_SALON-4_main_20251203170403.jpg → top:76.18%, left:95.18%
+80. [Nivel 1] 6_Grada Norte_main_20251203160320.jpg → top:52.76%, left:52.71%
+81. [Nivel 1] 6_11B_main_20251203160049.jpg → top:60.76%, left:46.69%
+82. [Nivel 1] 6_Plaza panamericana 2_main_20251203160049.jpg → top:50.99%, left:44.77%
+83. [Nivel 1] 6_9A_main_20251203160642.jpg → top:52.20%, left:47.58%
+84. [Nivel 1] 6_BEBEDEROS_main_20251203160319.jpg → top:81.81%, left:92.23%
+85. [Nivel 2] 6_PER-SAMS_main_20251203155959.jpg → top:67.02%, left:96.41%
+86. [Nivel 2] 6_SALON-8_main_20251203154149.jpg → top:76.04%, left:94.84%
+87. [Nivel 2] 6_SALON-7_main_20251203163656.jpg → top:72.91%, left:95.11%
+88. [Nivel 2] 6_PASILLO-PA_main_20251203181129.jpg → top:78.05%, left:91.14%
+89. [Nivel 1] 6_SALON-1_main_20251203174404.jpg → top:67.51%, left:95.45%
+90. [Nivel 1] 6_SALON-2_main_20251203161324.jpg → top:70.41%, left:95.38%
+91. [Nivel 1] 6_SALON-3_main_20251203164429.jpg → top:72.83%, left:95.25%
+92. [Nivel 2] 6_Frente-JHS_main_20251203155640.jpg → top:74.43%, left:90.25%
+93. [Nivel 2] 6_OFI-PA_main_20251203160140.jpg → top:80.76%, left:87.17%
+94. [Nivel 2] 6_PER-ESTACIONAMIENTO_main_20251203160049.jpg → top:85.26%, left:89.77%
+95. [Nivel 2] 6_PER-SAMS2_main_20251203155908.jpg → top:81.58%, left:94.63%
+96. [Nivel 1] 6_PASILLO ESCALERA PB_main_20251203154454.jpg → top:79.96%, left:87.85%
+97. [Nivel 1] 6_JARDINERA_main_20251203155547.jpg → top:78.50%, left:91.69%
+98. [Nivel 2] 6_ESCALERAS_main_20251203160321.jpg → top:78.82%, left:91.07%
+99. [Nivel 2] 6_SALA-MASTROS_main_20251203155727.jpg → top:80.83%, left:93.33%
+100. [Nivel 2] 6_SALON-6_main_20251203160552.jpg → top:70.28%, left:95.38%
+101. [Nivel 2] 6_PASILLO ESCALERA PA_main_20251203155959.jpg → top:80.21%, left:88.12%
+102. [Nivel 1] 6_OFI-PB_main_20251203155817.jpg → top:80.90%, left:87.10%
+103. [Nivel 1] 6_PASILLO-PB_main_20251203160643.jpg → top:78.06%, left:90.25%
+104. [Nivel 1] 6_10B_main_20251209051944.jpg → top:58.71%, left:36.55%
+105. [Nivel 2] 6_PER-CANCHAS_main_20251209094540.jpg → top:66.96%, left:91.27%

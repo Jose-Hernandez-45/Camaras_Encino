@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editor de puntos por niveles</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #222;
+        color: white;
+        padding: 20px;
+    }
+
+    #nivelActual {
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #333;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    button {
+        margin: 5px;
+        padding: 8px 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #mapa-container {
+        position: relative;
+        display: inline-block;
+        border: 3px solid #555;
+        margin-top: 15px;
+    }
+
+    #mapa {
+        max-width: 100%;
+        display: none;
+    }
+
+    .punto {
+        width: 14px;
+        height: 14px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border: 2px solid white;
+        cursor: pointer; /* añadido */
+    }
+
+    .punto.nivel2 {
+        background: #00c8ff;
+    }
+
+    #lista {
+        white-space: pre-wrap;
+        background: #111;
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 300px;
+        overflow-y: auto;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>📍 Editor de cámaras con dos niveles + importador</h2>
+
+<input type="file" id="fileInput" accept="image/*">
+
+<br><br>
+
+<div id="nivelActual">Nivel activo: <b>1</b></div><br>
+
+<button onclick="cambiarNivel(1)">Nivel 1</button>
+<button onclick="cambiarNivel(2)">Nivel 2</button>
+
+<div id="mapa-container">
+    <img id="mapa">
+</div>
+
+<h3>Lista de puntos generados:</h3>
+<div id="lista">(vacío)</div>
+
+<h3>Cargar puntos desde texto:</h3>
+<textarea id="importar" style="width:100%; height:120px;"></textarea><br>
+<button onclick="importarPuntos()">Importar puntos</button>
+
+<br><br>
+
+<button onclick="generarHTML()">Descargar HTML final</button>
+
+<script>
+let puntos = [];
+let nivel = 1;
+let mapa = document.getElementById("mapa");
+let contenedor = document.getElementById("mapa-container");
+
+function cambiarNivel(n) {
+    nivel = n;
+    document.querySelector("#nivelActual b").textContent = n;
+
+    document.querySelectorAll('.punto').forEach(p => p.style.display = "none");
+    document.querySelectorAll('.n' + nivel).forEach(p => p.style.display = "block");
+}
+
+document.getElementById("fileInput").addEventListener("change", function(e) {
+    let reader = new FileReader();
+    reader.onload = function(event) {
+        mapa.src = event.target.result;
+        mapa.style.display = "block";
+    };
+    reader.readAsDataURL(e.target.files[0]);
+});
+
+contenedor.addEventListener("click", function(e) {
+    if (mapa.style.display === "none") return;
+
+    let rect = mapa.getBoundingClientRect();
+
+    let x = ((e.clientX - rect.left) / rect.width) * 100;
+    let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    let nombre = prompt("Nombre del archivo de la cámara (incluye extensión):");
+    if (!nombre) return;
+
+    // Crear objeto punto
+    let punto = { x, y, nombre, nivel };
+    puntos.push(punto);
+
+    // Crear DIV visual
+    let div = document.createElement("div");
+    div.className = "punto n" + nivel + (nivel === 2 ? " nivel2" : "");
+    div.style.left = x + "%";
+    div.style.top = y + "%";
+    contenedor.appendChild(div);
+
+    activarInteraccionPunto(div, punto);
+
+    cambiarNivel(nivel);
+    actualizarLista();
+});
+
+function actualizarLista() {
+    let texto = "";
+    puntos.forEach((p, i) => {
+        texto += `${i+1}. [Nivel ${p.nivel}] ${p.nombre} → top:${p.y.toFixed(2)}%, left:${p.x.toFixed(2)}%\n`;
+    });
+    document.getElementById("lista").textContent = texto;
+}
+
+/* ---------------------------
+   IMPORTAR PUNTOS DESDE TEXTO
+------------------------------ */
+
+function importarPuntos() {
+    let texto = document.getElementById("importar").value.trim();
+    if (!texto) return;
+
+    let lineas = texto.split("\n");
+
+    lineas.forEach(linea => {
+        let regex = /Nivel\s*(\d+)]\s*(.*?)\s*→\s*top:([\d.]+)%,\s*left:([\d.]+)%/;
+        let match = linea.match(regex);
+
+        if (match) {
+            let nivel = parseInt(match[1]);
+            let nombre = match[2].trim();
+            let y = parseFloat(match[3]);
+            let x = parseFloat(match[4]);
+
+            // Crear objeto punto
+            let punto = { x, y, nombre, nivel };
+            puntos.push(punto);
+
+            // Crear DIV visual
+            let div = document.createElement("div");
+            div.className = "punto n" + nivel + (nivel === 2 ? " nivel2" : "");
+            div.style.left = x + "%";
+            div.style.top = y + "%";
+            contenedor.appendChild(div);
+
+            activarInteraccionPunto(div, punto);
+        }
+    });
+
+    actualizarLista();
+    cambiarNivel(nivel);
+}
+
+
+/* ---------------------------
+   ELIMINAR Y MOVER PUNTOS
+------------------------------ */
+
+let puntoSeleccionado = null;
+let moviendo = false;
+
+function activarInteraccionPunto(div, datos) {
+
+    // ---- MOVER (Drag) ----
+    div.addEventListener("mousedown", (e) => {
+        if (e.button !== 0) return; // solo clic izquierdo
+        e.preventDefault();
+
+        moviendo = true;
+        puntoSeleccionado = { div, datos };
+
+        document.body.style.userSelect = "none";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!moviendo || !puntoSeleccionado) return;
+
+        let rect = mapa.getBoundingClientRect();
+        let x = ((e.clientX - rect.left) / rect.width) * 100;
+        let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        x = Math.min(100, Math.max(0, x));
+        y = Math.min(100, Math.max(0, y));
+
+        puntoSeleccionado.div.style.left = x + "%";
+        puntoSeleccionado.div.style.top = y + "%";
+
+        puntoSeleccionado.datos.x = x;
+        puntoSeleccionado.datos.y = y;
+
+        actualizarLista();
+    });
+
+    document.addEventListener("mouseup", () => {
+        moviendo = false;
+        puntoSeleccionado = null;
+        document.body.style.userSelect = "auto";
+    });
+
+    // ---- ELIMINAR PUNTO (clic derecho) ----
+    div.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+
+        if (confirm("¿Eliminar este punto?")) {
+
+            let i = puntos.indexOf(datos);
+            if (i >= 0) puntos.splice(i, 1);
+
+            div.remove();
+            actualizarLista();
+        }
+    });
+}
+
+
+/* ---------------------------
+   GENERAR HTML FINAL
+------------------------------ */
+
+function generarHTML() {
+
+    let html = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mapa de Cámaras</title>
+
+<style>
+    body {
+        background:#222; 
+        margin:0; padding:0;
+        color:white; 
+        text-align:center;
+        font-family:Arial;
+        overflow-x:hidden; /* evita scroll horizontal */
+    }
+    #header {
+        position: fixed;
+        top:0; left:0;
+        width: 100%;
+        background:#111;
+        padding: 15px;
+        z-index: 999999;
+        border-bottom: 2px solid #444;
+    }
+    #contenido { padding-top: 90px; margin-bottom: 5%}
+
+    button { padding:10px 15px; margin:5px; cursor:pointer; }
+
+    #mapa-container { 
+        position:relative; 
+        display:inline-block; 
+        margin-top:20px; 
+    }
+
+    #mapa { 
+        max-width:100%; 
+        border:3px solid #555; 
+        position:relative; 
+    }
+
+    .punto {
+        width:18px; height:18px;
+        background:red;
+        border-radius:50%;
+        position:absolute;
+        transform:translate(-50%,-50%);
+        border:2px solid white;
+        cursor:pointer;
+        display:none;
+        z-index:10;
+    }
+
+    .nivel2 { background:#00c8ff; }
+
+    #tooltip {
+        position: absolute;
+        display: none;
+        background: black;
+        padding: 6px;
+        border-radius: 5px;
+        z-index: 599999;
+        max-width: 400px;
+    }
+
+    #tooltip img {
+        max-width: 100%;   /* límite horizontal */
+        max-height: 300px; /* límite vertical (ajusta lo que quieras) */
+        height: auto;
+        width: auto;
+        border: 2px solid white;
+        display: block;
+        object-fit: contain;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="header">
+    <button onclick="mostrarNivel(1)">Primer Piso</button>
+    <button onclick="mostrarNivel(2)">Segundo Piso</button>
+</div>
+
+<div id="contenido">
+
+<div id="mapa-container">
+    <img id="mapa" src="${mapa.src}">
+`;
+
+    // Insertar puntos
+    puntos.forEach(p => {
+        html += `
+    <div class="punto nivel${p.nivel} ${p.nivel==2?"nivel2":""}"
+         data-img="${p.nombre}"
+         style="top:${p.y}%; left:${p.x}%;"></div>
+`;
+    });
+
+    // Tooltip global
+    html += `
+    <div id="tooltip"></div>
+</div>
+</div>
+
+<script>
+// Mostrar puntos por nivel
+function mostrarNivel(n) {
+    document.querySelectorAll('.punto').forEach(p => p.style.display = "none");
+    document.querySelectorAll('.nivel' + n).forEach(p => p.style.display = "block");
+}
+
+mostrarNivel(1);
+
+const tooltip = document.getElementById("tooltip");
+
+let tooltipFijado = false;   // si el tooltip está bloqueado por click
+let puntoActual = null;      // punto que tiene actualmente el tooltip abierto
+
+function mostrarTooltip(p) {
+    const img = p.dataset.img;
+    tooltip.innerHTML = '<img src="' + img + '">';
+
+    const puntoX = p.offsetLeft;
+    const puntoY = p.offsetTop;
+
+    const tooltipWidth = 400;
+    const viewportWidth = window.innerWidth;
+    const limiteDerecho = viewportWidth * 0.80;
+
+    let posX;
+    if (puntoX > limiteDerecho) posX = puntoX - tooltipWidth - 20;
+    else posX = puntoX + 30;
+
+    tooltip.style.left = posX + "px";
+    tooltip.style.top = (puntoY - 10) + "px";
+    tooltip.style.display = "block";
+}
+
+document.querySelectorAll('.punto').forEach(p => {
+
+    // ----- HOVER -----
+    p.addEventListener("mouseover", () => {
+        if (!tooltipFijado) mostrarTooltip(p);
+    });
+
+    p.addEventListener("mouseout", () => {
+        if (!tooltipFijado) tooltip.style.display = "none";
+    });
+
+    // ----- CLICK (toggle) -----
+    p.addEventListener("click", () => {
+
+        // Si se vuelve a clicar el mismo punto → ocultar
+        if (tooltipFijado && puntoActual === p) {
+            tooltipFijado = false;
+            tooltip.style.display = "none";
+            puntoActual = null;
+            return;
+        }
+
+        // Fijar tooltip en este punto
+        tooltipFijado = true;
+        puntoActual = p;
+        mostrarTooltip(p);
+    });
+});
+
+<\/script>
+
+</body>
+</html>
+`;
+
+    let blob = new Blob([html], { type:"text/html" });
+    let url = URL.createObjectURL(blob);
+
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "mapa_camaras_niveles.html";
+    a.click();
+}
+
+</script>
+
+</body>
+</html>
