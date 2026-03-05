@@ -1,0 +1,7 @@
+{
+  "name": "Encino_cam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
